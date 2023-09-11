@@ -1,3 +1,4 @@
+"use client";
 import { getProducts } from "@/services";
 import { Product } from "@/types";
 import { use, useEffect } from "react";
