@@ -1,21 +1,9 @@
-"use client";
 import { getProducts } from "@/services";
 import { Product } from "@/types";
-import { use } from "react";
 import Card from "./components/Card";
 import styles from "./page.module.css";
-export default function Home() {
-  const products = use(getProducts());
-
-  // useEffect(() => {
-  //   let deferredPrompt;
-
-  //   window.addEventListener("beforeinstallprompt", (e) => {
-  //     console.log("e", e);
-  //     deferredPrompt = e;
-  //   });
-  // }, []);
-
+export default async function Home() {
+  const products = await getProducts();
   return (
     <main className={styles.main}>
       <h1>PWA demo</h1>
