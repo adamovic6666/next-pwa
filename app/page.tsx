@@ -25,7 +25,7 @@ export default function Home() {
     };
   }, [showButton]);
 
-  const handle_prompt = (_) => {
+  const handle_prompt = () => {
     setShowButton(false);
     prompt.prompt();
     setPrompt(null);
