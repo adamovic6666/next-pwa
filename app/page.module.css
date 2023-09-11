@@ -2,8 +2,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 6rem;
+  padding: 3rem;
   min-height: 100vh;
+}
+
+.main h1 {
+  color: rgb(77, 77, 77);
+  font-weight: 400;
+  text-decoration: underline;
 }
 
 .description {
@@ -69,6 +75,12 @@
   font-size: 0.9rem;
   line-height: 1.5;
   max-width: 30ch;
+
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .center {
@@ -114,10 +126,25 @@
   background-color: rgba(255, 255, 255, 0.473);
   border-radius: 24px;
   padding: 16px;
+
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .productPageWrapper {
+    flex-direction: row;
+  }
 }
 
 .productPageWrapper img {
   border-radius: 24px;
+  max-height: 350px;
+}
+
+@media (min-width: 1024px) {
+  .productPageWrapper img {
+    max-height: unset;
+  }
 }
 
 .productPageWrapper > div:nth-of-type(2) {
@@ -130,6 +157,13 @@
   position: relative;
   padding: 40px;
   padding-top: 64px;
+  margin-top: 16px;
+}
+
+@media (min-width: 1024px) {
+  .productPageWrapper > div:nth-of-type(2) {
+    margin-top: 0px;
+  }
 }
 
 .productPageWrapper > div:nth-of-type(2) > span:nth-of-type(1) {
@@ -240,11 +274,20 @@
 }
 
 .cards {
-  display: grid;
-  padding-top: 80px;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 40px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  row-gap: 40px;
   list-style: none;
+}
+
+@media (min-width: 1024px) {
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 40px;
+    padding-top: 80px;
+  }
 }
 
 .card {
@@ -257,6 +300,8 @@
   padding: 0;
   overflow: hidden;
   max-height: 500px;
+  max-width: 250px;
+  height: 370px;
 }
 
 .card:hover span {
@@ -279,11 +324,17 @@
   right: 16px;
   top: 8px;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 8px;
   border: 1px solid rgba(105, 105, 105, 0.253);
   padding: 4px 8px;
   border-radius: 16px;
   color: rgb(105, 105, 105);
+}
+
+@media (min-width: 701px) and (max-width: 1120px) {
+  .card > div span:nth-of-type(1) {
+    font-size: 12px;
+  }
 }
 
 .card > div span:nth-of-type(2) {
@@ -300,10 +351,12 @@
   right: 16px;
   top: 40%;
   font-weight: bold;
+  font-size: 14px;
 }
 
 .card > div h3 {
   margin-bottom: 16px;
+  font-size: 16px;
 }
 
 /* Tablet and Smaller Desktop */

@@ -6,7 +6,7 @@ export default async function Home() {
   const products = await getProducts();
   return (
     <main className={styles.main}>
-      <h1>PRODUCTS</h1>
+      <h1>PWA demo</h1>
       <ul className={styles.cards}>
         {products?.map((product: Product) => (
           <li key={product.id}>
