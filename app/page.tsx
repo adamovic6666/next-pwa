@@ -1,20 +1,20 @@
 "use client";
 import { getProducts } from "@/services";
 import { Product } from "@/types";
-import { use, useEffect } from "react";
+import { use } from "react";
 import Card from "./components/Card";
 import styles from "./page.module.css";
 export default function Home() {
   const products = use(getProducts());
 
-  useEffect(() => {
-    let deferredPrompt;
+  // useEffect(() => {
+  //   let deferredPrompt;
 
-    window.addEventListener("beforeinstallprompt", (e) => {
-      console.log("e", e);
-      deferredPrompt = e;
-    });
-  }, []);
+  //   window.addEventListener("beforeinstallprompt", (e) => {
+  //     console.log("e", e);
+  //     deferredPrompt = e;
+  //   });
+  // }, []);
 
   return (
     <main className={styles.main}>
