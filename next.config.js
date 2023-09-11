@@ -2,8 +2,8 @@
 
 const withPWA = require("@ducanh2912/next-pwa").default({
   dest: "public",
-  // register: true,
-  // skipWaiting: true,
+  register: true,
+  skipWaiting: true,
   fallbacks: {
     // Failed page requests fallback to this.
     document: "/~offline",
