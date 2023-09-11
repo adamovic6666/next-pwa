@@ -1,20 +1,22 @@
 /** @type {import('next').NextConfig} */
 
-// const withPWA = require("next-pwa")({
-//   dest: "public",
-//   register: true,
-//   skipWaiting: true,
-//   // register: true,
-//   // scope: '/app',
-//   // sw: 'service-worker.js',
-//   //...
-// });
+const withPWA = require("@ducanh2912/next-pwa").default({
+  dest: "public",
+  // register: true,
+  // skipWaiting: true,
+  fallbacks: {
+    // Failed page requests fallback to this.
+    document: "/~offline",
+    // This is for images.
+    image: "/fallback.png",
+  },
+});
 
-const nextConfig = {
+const nextConfig = withPWA({
   reactStrictMode: true,
   images: {
     domains: ["i.dummyjson.com"],
   },
-};
+});
 
 module.exports = nextConfig;
